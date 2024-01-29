@@ -1,0 +1,44 @@
+-Assets
+  -[ProjectName]
+    -Art
+      -Animation
+        -AnimationClips
+        -Animators
+      -Audio
+        -AudioClips
+        -AudioMixers
+      -Fonts
+      -Materials
+      -Models
+      -PhysicMaterials
+      -Shaders
+      -Sprites
+      -Textures
+      -Timeline
+      -UIToolkit
+        -Layouts
+        -Settings
+        -Styles
+        -Themes
+      -Timeline
+    -Documentation
+      -Images
+      -ReadMe
+        -Art
+          -Sprites
+        -Scripts
+          -Editor
+    -Prefabs
+    -Presets
+    -Resources
+    -Scenes
+    -ScriptableObjects
+    -Scripts
+      -Editor
+      -Runtime
+      -Tests
+        -Editor
+        -Runtime
+    -Settings
+    
+  
