@@ -103,27 +103,28 @@ There are a few different ways you can name things. Here are some common casing 
 <a name="structure"></a>
 ## 2. Project Structure
 <pre>
-	|-- _Assets
-		|-- Arts
-			|-- Animations
-				|-- Clips
-				|-- Controllers
-			|-- Fonts
-			|-- Materials
-			|-- Models
-			|-- SFXs
-			|-- Textures
-			|-- VFXs
-				|-- Clips
-				|-- Graphs
-		|-- GameData
-			|-- InputActions
-		|-- Prefabs
-		|-- Presets
-		|-- Scenes
-			|-- Levels
-			|-- Templates
-		|-- Scripts
+|-- _Assets
+	|-- Arts
+		|-- Animations
+			|-- Clips
+			|-- Controllers
+		|-- Fonts
+		|-- Materials
+		|-- Models
+		|-- SFXs
+		|-- Textures
+		|-- VFXs
+			|-- Clips
+			|-- Graphs
+	|-- GameData
+		|-- InputActions
+	|-- Prefabs
+	|-- Presets
+	|-- Scenes
+		|-- Levels
+		|-- Templates
+	|-- Scripts
+|-- _Packages
 </pre>
 ## 2.9 Scene Structure
 Next to the project’s hierarchy, there’s also scene hierarchy. As before, we’ll present you a template. You can adjust it to your needs. Use named empty game objects as scene folders.
