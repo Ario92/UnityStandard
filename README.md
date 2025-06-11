@@ -25,6 +25,10 @@ For creating a VR project do these steps:
 
 # Unity Style Guide
 
+This e-book is the main refrence for our clean code document.
+
+https://unity.com/resources/create-code-c-sharp-style-guide-e-book
+
 This article contains ideas for setting up a projects structure and a naming convention for scripts and assets in Unity.
 
 <a name="toc"></a>
