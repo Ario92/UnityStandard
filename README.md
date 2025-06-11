@@ -580,11 +580,11 @@ Depending on how your asset variants are made, you can chain together variant na
 
 | Asset Type               | Asset Name   |
 | ------------------------ | ------------ |
-| Skeletal Mesh            | SK_Bob       |
-| Material                 | M_Bob        |
-| Texture (Diffuse/Albedo) | T_Bob_D      |
+| Dynamic  Mesh            | DM_Bob       |
+| Material                 | Bob          |
+| Texture (Base Color)     | T_Bob_BC     |
 | Texture (Normal)         | T_Bob_N      |
-| Texture (Evil Diffuse)   | T_Bob_Evil_D |
+| Texture (Evil Base Color)| T_Bob_Evil_BC|
 
 ##### Prop
 
@@ -593,8 +593,8 @@ Depending on how your asset variants are made, you can chain together variant na
 | Static Mesh (01)         | SM_Rock_01   |
 | Static Mesh (02)         | SM_Rock_02   |
 | Static Mesh (03)         | SM_Rock_03   |
-| Material                 | M_Rock       |
-| Material Instance (Snow) | MI_Rock_Snow |
+| Material                 | Rock         |
+| Material Varient (Snow)  | Rock_Snow_V  |
 
 <a name="asset-name-modifiers"></a>
 ### 4.2 Asset Name Modifiers
@@ -624,32 +624,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 > 4.2.10 [User Interface](#anc-ui)
 
 > 4.2.11 [Effects](#anc-effects)
-
-<a name="anc-common"></a>
-#### Most Common
-
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Scene           |  *          |            | [Should be in a folder called Levels.](#levels) e.g. `Levels/A4_C17_Parking_Garage.unity` |
-| Level (Persistent)      |            | _P         |                                  |
-| Level (Audio)           |            | _Audio     |                                  |
-| Level (Lighting)        |            | _Lighting  |                                  |
-| Level (Geometry)        |            | _Geo       |                                  |
-| Level (Gameplay)        |            | _Gameplay  |                                  |
-| Prefab                  |        |            |                                  |
-| Probe (Reflection)      | RP_        |            |                                  |
-| Probe (Light)           | LP_        |            |                                  |
-| Volume                  | V_         |            |                                  |
-| Trigger Area            |            | _Trigger   |                                  |
-| Material                | M_         |            |                                  |
-| Static Mesh             | SM_       |            |                                  |
-| Skeletal Mesh           | SK_       |            |                                  |
-| Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
-| Visual Effects          | VFX_       |            |                                  |
-| Particle System         | PS_       |            |                                  |
-| Light                   | L_         |            |                                  |
-| Camera (Cinemachine)    | CM_         |            | Virtual Camera                   |
-
+	
 <a name="anc-models"></a>
 
 #### 4.2.1a 3D Models (FBX Files)
@@ -658,86 +633,53 @@ PascalCase
 
 | Asset Type    | Prefix | Suffix | Notes |
 | ------------- | ------ | ------ | ----- |
-| Characters    | CH_    |        |       |
-| Vehicles      | VH_    |        |       |
-| Weapons       | WP_    |        |       |
 | Static Mesh   | SM_    |        |       |
-| Skeletal Mesh | SK_    |        |       |
-| Skeleton      | SKEL_  |        |       |
-| Rig           | RIG_   |        |       |
+| Dynamic Mesh 	| DM_    |        |       |
 
-#### 4.2.1b 3d Models (3ds Max)
 
-All meshes in 3ds Max are lowercase to differentiate them from their FBX export.
-
-| Asset Type    | Prefix | Suffix      | Notes                                   |
-| ------------- | ------ | ----------- | --------------------------------------- |
-| Mesh          |        | _mesh_lod0* | Only use LOD suffix if model uses LOD's |
-| Mesh Collider |        | _collider   |                                         |
-
-<a name="anc-animations"></a>
-
-#### 4.2.2 Animations 
-| Asset Type           | Prefix | Suffix | Notes |
-| -------------------- | ------ | ------ | ----- |
-| Animation Clip       | A_     |        |       |
-| Animation Controller | AC_    |        |       |
-| Avatar Mask          | AM_    |        |       |
-| Morph Target         | MT_    |        |       |
-
-<a name="anc-ai"></a>
-#### 4.2.3 Artificial Intelligence
-
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| AI / NPC                | AI_        |  _NPC          |   *Npc could be pawn of CH_ !AI_                          |
-| Behavior Tree           | BT_      |            |                                  |
-| Blackboard              | BB_       |            |                                  |
-| Decorator               | BTDecorator_ |          |                                  |
-| Service                 | BTService_ |            |                                  |
-| Task                    | BTTask_  |            |                                  |
-| Environment Query       | EQS_     |            |                                  |
-| EnvQueryContext         | EQS_     | Context    |                                  |
 
 <a name="anc-prefab"></a>
 #### 4.2.4 Prefabs
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Prefab         |        |            |                                  |
-| Prefab Instance         | I       |            |                                  |
-| Scriptable Object       |     |        | Assigned "Blueprint" label in Editor |
+| Prefab                  |            |            |                                  |
+| Prefab Varient          |            | _V         |                                  |
+| Prefab                  |*           |            | Set based on usages              |
+
+## Examples
+| Asset Type              | Prefix     |
+| ----------------------- | ---------- |
+| Prefab                  |VFX_        |        
+| Prefab                  |Door_       |        
+| Prefab                  |Player_     |       
+
 
 <a name="anc-materials"></a>
 
 #### 4.2.5 Materials
 | Asset Type        | Prefix | Suffix | Notes |
 | ----------------- | ------ | ------ | ----- |
-| Material          | M_     |        |       |
-| Material Instance | MI_    |        |       |
-| Physical Material | PM_    |        |       |
-| Material Shader Graph | MSG_    |        |       |
+| Material          |        |        |       |
+| Material Varient  |        | _V     |       |
 
 <a name="anc-textures"></a>
 
 #### 4.2.6 Textures
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Texture                 | T_         |            |                                  |
-| Texture (Base Color)    | T_         | _BC         | Diffuse / Albedo     	       |
+| Texture (Sprite)        | T_         | _I         |                                  |
+| Texture (Base Color)    | T_         | _BC        | Diffuse / Albedo     	       |
 | Texture (Metallic / Smoothness)| T_  | _MS        |                                  |
 | Texture (Normal)        | T_         | _N         |                                  |
 | Texture (Alpha)         | T_         | _A         |                                  |
-| Texture (Height)          | T_         | _H         |                                  |
-| Texture (Ambient Occlusion) | T_     | _AO      |                                  |
+| Texture (Height)        | T_         | _H         |                                  |
+| Texture (Ambient Occlusion) | T_     | _AO        |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Mask)          | T_         | _M         |                                  |
 | Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
-| Texture Cube            | TC_       |            |                                  |
-| Media Texture           | MT_       |            |                                  |
-| Render Target           | RT_       |            |                                  |
-| Cube Render Target      | RTC_     |            |                                  |
-| Texture Light Profile   | TLP_     |            |                                  |
+| Texture Cube            | TC_        |            |                                  |
+| Render Target           | RT_        |            |                                  |
 
 <a name="anc-textures-packing"></a>
 
@@ -747,23 +689,7 @@ It is common practice to pack multiple layers of texture data into one texture. 
 > It is generally acceptable to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel and as this is common practice, adding `A` to the `_D` suffix is optional.
 
 Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel as a texture with an alpha channel incurs more overhead than one without.
-<a name="anc-misc"></a>
 
-#### 4.2.7 Miscellaneous
-
-| Asset Type                      | Prefix | Suffix | Notes |
-| ------------------------------- | ------ | ------ | ----- |
-| Universal Render Pipeline Asset | URP_   |        |       |
-| HD Render Pipeline Asset        | HDRP_  |        |       |
-| Post Process Volume Profile     | PP_    |        |       |
-| User Interface                  | UI_    |        |       |
-
-<a name="anc-physics"></a>
-#### 4.2.8 Physics
-
-| Asset Type        | Prefix | Suffix | Notes |
-| ----------------- | ------ | ------ | ----- |
-| Physical Material | PM_    |        |       |
 
 <a name="anc-audio"></a>
 
@@ -771,23 +697,10 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 
 | Asset Type     | Prefix | Suffix | Notes                                                        |
 | -------------- | ------ | ------ | ------------------------------------------------------------ |
-| Audio Clip     | A_     |        |                                                              |
-| Audio Mixer    | MIX_   |        |                                                              |
-| Dialogue Voice | DV_    |        |                                                              |
-| Audio Class    |        |        | No prefix/suffix. Should be put in a folder called AudioClasses |
+| Audio Clip     |        | _S     |                                                              |
+| Dialogue Voice |        | _D     |                                                              |
 
-<a name="anc-ui"></a>
-#### 4.2.10 User Interface
-| Asset Type       | Prefix | Suffix | Notes |
-| ---------------- | ------ | ------ | ----- |
-| Font             | Font_  |        |       |
-| Texture (Sprite) | T_     | _GUI   |       |
 
-<a name="anc-effects"></a>
-#### 4.2.11 Effects
-| Asset Type      | Prefix | Suffix | Notes |
-| --------------- | ------ | ------ | ----- |
-| Particle System | PS_    |        |       |
 **[⬆ Back to Top](#table-of-contents)**
 
 <a name="asset-workflows"></a>
@@ -817,58 +730,6 @@ Example guide for Import Settings:
 
 https://github.com/justinwasilenko/Unity-AssetPostProcessor
 
-<a name="3dsmax"></a>
-### 5.2 3ds Max
-
-Unity guide on importing from 3ds Max:
-
-https://docs.unity3d.com/2017.4/Documentation/Manual/HOWTO-ImportObjectMax.html
-
-Unity tutorial on the FBX Exporter Package for FBX roundtrip:
-
-https://learn.unity.com/project/3ds-max-to-unity-pipeline
-
-#### Setting up 3ds Max
-
-Unity uses 1 unit = 1 meter. Setup 3ds Max to use Meters by going to ```Customize/Units Setup/System Unit Setup``` and set to 1 Unit = 1 Meter. Using the correct scale is very important for correct Physics / GI / and VR interaction.
-
-Animation frame rate in 3ds Max should be set to 30fps. The ```Time Configuration``` dialog box has 3ds Max's FPS settings
-
-##### Working with Small Objects
-
-* Set ```Customize > Customize User Interface > Mouse Wheel Zoom Increment``` to 0.1m to stop over zooming
-
-* Turn on Viewport Clipping and set the slider on the side of the viewport to be able to zoom in on small meshes. (https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/sfdcarticles/sfdcarticles/Viewport-Clipping.html)
-
-#### Modeling in 3ds Max
-
-* Follow the [asset naming convention](#anc-models)
-* Avoid super long thin triangles (Speeds up tile based renderers & helps with proper GI baking)
-* Use Area and Angle Weighted Mesh Normals (Unity Import Setting or Create in 3ds Max)
-
-
-
-**[⬆ Back to Top](#table-of-contents)**
-
-<a name="textures"></a>
-### 5.3 Textures
-
-* Textures follow the [naming convention](#anc-textures) found above. 
-* They are a power of two (For example, 512 x 512 or 256 x 1024).
-* Use Texture Atlases wherever possible.
-* 3D software should point to the Unity project textures for consistency when you save or export.
-* It is better to resize the texture in Photoshop then to use Unity’s compression options when the in game texture resolution is already known. This reduces the file size and import time of the texture into Unity.
-* When working with a high-resolution source PSD outside your Unity project use the same name for both the high-resolution and the imported Unity file. This allows quick iteration when swapping between the 2 textures.
-
-More information for importing textures can be found here: [https://docs.unity3d.com/Manual/ImportingTextures.html](https://docs.unity3d.com/Manual/ImportingTextures.html)
-
-Textures requiring the use of a Alpha channel should follow this guide: [https://docs.unity3d.com/Manual/HOWTO-alphamaps.html](https://docs.unity3d.com/Manual/HOWTO-alphamaps.html)
-
-##### Texture File Format
-
-All textures should be of the .PSD format. No layers should be included and only one Alpha channel in the imported file.
-
-**[⬆ Back to Top](#table-of-contents)**
 
 <a name="audio"></a>
 ### 5.4 Audio
